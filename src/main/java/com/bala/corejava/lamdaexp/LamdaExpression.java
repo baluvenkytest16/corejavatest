@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
+import com.bala.corejava.common.Utils;
 import com.bala.corejava.lamdaexp.beans.Product;
 
 /*
@@ -24,15 +25,13 @@ interface addOnPlus5 {
 	public long addValueOnPlus5(long x);
 }
 
-interface LineSeparator {
-	public void printLineSeperator();
-}
+
 
 public class LamdaExpression {
 
 	List<Product> productList = genarateTestData();
 	
-	static LineSeparator lineSpe = () -> System.out.println("\n--------- ****************** ----------\n");
+	//static LineSeparator lineSpe = () -> System.out.println("\n--------- ****************** ----------\n");
 
 	public void printValue(String value) {
 		System.out.println("output value : " + value);
@@ -91,7 +90,7 @@ public class LamdaExpression {
 	}
 
 	private void testFilterList(String filterText) {
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		Stream<Product> filterData = productList.stream().filter((product) -> product.getName().toLowerCase().contains(filterText.toLowerCase()));
 		
 		filterData.forEach(product -> product.description());
@@ -99,7 +98,7 @@ public class LamdaExpression {
 
 	private void testListIterator() {
 		
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		
 		List<String> list = new ArrayList<String>();
 		list.add("test1");
@@ -111,7 +110,7 @@ public class LamdaExpression {
 	}
 
 	public void testNormalThreads() {
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		/*
 		 * Thread creating without lamda
 		 */
@@ -129,7 +128,7 @@ public class LamdaExpression {
 	}
 
 	public void testLamdaThread() {
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		/*
 		 * Thread creating with lamda
 		 */
@@ -143,7 +142,7 @@ public class LamdaExpression {
 	}
 
 	public void testComparator() {
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		Collections.sort(productList, (p1, p2) -> {
 			return p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
 		});
@@ -152,7 +151,7 @@ public class LamdaExpression {
 	}
 
 	public List<Product> genarateTestData() {
-		lineSpe.printLineSeperator();
+		Utils.printLineSeperator();
 		Product p1 = new Product("Samsung j7");
 		Product p2 = new Product("Samsung j1");
 		Product p3 = new Product("iPhone j7");
