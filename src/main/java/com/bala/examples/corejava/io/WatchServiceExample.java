@@ -1,4 +1,4 @@
-package com.bala.corejava.io;
+package com.bala.examples.corejava.io;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,17 +8,15 @@ import java.nio.file.StandardWatchEventKinds;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import com.bala.corejava.common.Utils;
+import com.bala.examples.corejava.common.Utils;
 
-public class WatchServiceTest {
+public class WatchServiceExample {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		WatchServiceTest watchServiceTest = new WatchServiceTest();
+		WatchServiceExample watchServiceTest = new WatchServiceExample();
 		
 		watchServiceTest.testWatchServiceDirectoryUpdate();
 

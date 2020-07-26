@@ -1,4 +1,4 @@
-package com.bala.corejava.methodreference;
+package com.bala.examples.corejava.methodreference;
 
 import java.util.function.BiFunction;
 

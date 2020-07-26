@@ -1,12 +1,12 @@
-package com.bala.corejava.lamdaexp;
+package com.bala.examples.corejava.lamdaexp;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.bala.corejava.common.Utils;
 import com.bala.corejava.lamdaexp.beans.Product;
+import com.bala.examples.corejava.common.Utils;
 
 /*
  * Lamda expression

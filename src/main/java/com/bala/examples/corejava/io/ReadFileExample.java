@@ -1,4 +1,4 @@
-package com.bala.corejava.io;
+package com.bala.examples.corejava.io;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,15 +8,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import com.bala.corejava.common.Utils;
+import com.bala.examples.corejava.common.Utils;
 
-public class ReadFileTest {
+public class ReadFileExample {
 
 	public static void main(String[] args) throws IOException {
 		
-		ReadFileTest readFileTest = new ReadFileTest();
+		ReadFileExample readFileTest = new ReadFileExample();
 		readFileTest.testReadFileLine();
 		readFileTest.readLinesUsingFileReader();
 	}

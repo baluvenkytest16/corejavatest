@@ -1,4 +1,4 @@
-package com.bala.corejava.io;
+package com.bala.examples.corejava.io;
 
 import static java.nio.file.StandardWatchEventKinds.*;
  

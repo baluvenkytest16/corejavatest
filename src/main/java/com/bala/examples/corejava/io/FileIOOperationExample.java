@@ -1,21 +1,21 @@
-package com.bala.corejava.io;
+package com.bala.examples.corejava.io;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import com.bala.corejava.common.Utils;
+import com.bala.examples.corejava.common.Utils;
 
-public class FileIOOperationTest {
+public class FileIOOperationExample {
 
 	public static void main(String[] args) {
-		FileIOOperationTest fileIOTest = new FileIOOperationTest();
+		FileIOOperationExample fileIOTest = new FileIOOperationExample();
 		
 		try {
-			fileIOTest.testIterateDirectory();
-			fileIOTest.testOnlyFileList();
-			fileIOTest.testGetSubDirectoriesUsingStream();
-			fileIOTest.testGetSubDirectoriesOnlyUsingStream();
+			fileIOTest.iterateDirectory();
+			fileIOTest.onlyFileList();
+			fileIOTest.getSubDirectoriesUsingStream();
+			fileIOTest.getSubDirectoriesOnlyUsingStream();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -23,7 +23,7 @@ public class FileIOOperationTest {
 		
 	}
 
-	private void testGetSubDirectoriesOnlyUsingStream() throws IOException {
+	private void getSubDirectoriesOnlyUsingStream() throws IOException {
 		
 		Utils.printLineSeperator();
 		System.out.println("\nUsing newDirectoryStream getting only directoryies ....");
@@ -53,7 +53,7 @@ public class FileIOOperationTest {
 		
 	}
 
-	private void testGetSubDirectoriesUsingStream() throws IOException {
+	private void getSubDirectoriesUsingStream() throws IOException {
 		Utils.printLineSeperator();
 		System.out.println("Get only sub directories ....");
 		Files.newDirectoryStream(Paths.get("."))
@@ -61,7 +61,7 @@ public class FileIOOperationTest {
 		
 	}
 
-	private void testIterateDirectory() throws IOException {
+	private void iterateDirectory() throws IOException {
 		Utils.printLineSeperator();
 		System.out.println("Iterate file in directory ....");
 		Files.list(Paths.get("."))
@@ -69,7 +69,7 @@ public class FileIOOperationTest {
 		
 	}
 
-	private void testOnlyFileList() throws IOException {
+	private void onlyFileList() throws IOException {
 		Utils.printLineSeperator();
 		System.out.println("Get only files from directory ....");
 		Files.list(Paths.get("."))

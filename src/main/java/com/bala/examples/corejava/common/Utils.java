@@ -1,4 +1,4 @@
-package com.bala.corejava.common;
+package com.bala.examples.corejava.common;
 
 interface LineSeparator {
 	public void printLineSeperator();

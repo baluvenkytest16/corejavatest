@@ -1,4 +1,4 @@
-package com.bala.corejava.io;
+package com.bala.examples.corejava.io;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-import com.bala.corejava.common.Utils;
+import com.bala.examples.corejava.common.Utils;
 
 public class WriteFileTest {
 
