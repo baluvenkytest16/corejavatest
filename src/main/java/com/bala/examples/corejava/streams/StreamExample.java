@@ -2,9 +2,13 @@ package com.bala.examples.corejava.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -26,6 +30,10 @@ public class StreamExample {
 		logger.info("After Joining :: {}", streamExample.joinerString(stringList));
 
 		streamExample.callStreamExamples();
+		Integer[] someArray = {10, 20 ,30 ,10 ,30, 40, 30, 20};
+		
+		Set<Integer> mySet = new HashSet<Integer>(Arrays.asList(someArray));
+		mySet.stream().forEach(value -> System.out.println("" + value));
 	}
 
 	public void callStreamExamples()
@@ -123,9 +131,11 @@ public class StreamExample {
 		/*
 		 * Using streams filter data and collect it and putting in another list
 		 */
+		if (productList == null) return null;
+		
 		logger.debug("Filter the price {} greater than products ", price);
 
-		List<Product> filterProducts = productList.stream().filter(product -> product.getPrice() > price)
+		List<Product> filterProducts = productList.stream().filter(product -> product.getPrice() >= price)
 				.collect(Collectors.toList());
 
 		return filterProducts;
@@ -148,8 +158,10 @@ public class StreamExample {
 		return productList;
 	}
 
-	public double calculateSum(List<Product> productList) {
-
+	public double calculateSum(List<Product> productList) 
+	{
+		if (productList == null) return 0.0;
+		
 		double totalPrice = productList.stream().map(p -> p.getPrice()).reduce(0.0, (sum, price) -> sum + price);
 
 		logger.debug("totalPrice :: {}", totalPrice);
@@ -158,6 +170,8 @@ public class StreamExample {
 	}
 
 	public double calculateSum2(List<Product> productList) {
+		
+		if (productList == null) return 0.0;
 		// More precise code
 		double totalPrice = productList.stream().map(product -> product.getPrice()).reduce((double) 0.0f, Double::sum);
 		// accumulating price, by referring method of Float class
@@ -166,7 +180,9 @@ public class StreamExample {
 		return totalPrice;
 	}
 
-	public double getMaximumValue(List<Product> productList) {
+	public double getMaximumValue(List<Product> productList) 
+	{
+		if (productList == null) return 0.0;
 		// More precise code
 		double maxPrice = productList.stream().map(product -> product.getPrice()).reduce((double) 0.0f, Double::max);
 		// accumulating price, by referring method of Float class
@@ -174,15 +190,22 @@ public class StreamExample {
 		return maxPrice;
 	}
 
-	public Optional<Double> getMinimumValue(List<Product> productList) {
+	public Optional<Double> getMinimumValue(List<Product> productList)
+	{
 		// More precise code
+		if(productList == null) return null;
+		
 		Optional<Double> minPrice = productList.stream().map(product -> product.getPrice()).reduce(Double::min);
 		// accumulating price, by referring method of Float class
 		logger.debug("Double::min :: Minim product price:: {}", minPrice.get().doubleValue());
 		return minPrice;
 	}
 
-	public double getTotalValue(List<Product> productList) {
+	public double getTotalValue(List<Product> productList)
+	{
+		
+		if (productList == null) return 0.0;
+		
 		double total = productList.stream().collect(Collectors.summingDouble(p -> p.getPrice()));
 		logger.debug(" Using Collectors calculating summ:: {}", total);
 		return total;

@@ -65,7 +65,7 @@ public class Product {
         return Objects.hash(name, price);
     }
 	public void description() {
-		logger.info("Product Details : id: {}, Name: {}, Price: {}" , this.id, this.name, this.price);
+		logger.debug("Product Details : id: {}, Name: {}, Price: {}" , this.id, this.name, this.price);
 	}
 
 }
